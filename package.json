@@ -1,0 +1,39 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "0.1.0",
+  "description": "typescriptでなんか作る時用のボイラープレート",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm-run-all clean tsc",
+    "clean": "rimraf dist/*",
+    "dev": "ts-node src/index.ts",
+    "lint": "eslint --ext .ts,.js src/",
+    "fix": "eslint --ext .ts,.js src/ --fix",
+    "start": "node .",
+    "tsc": "tsc",
+    "watch": "ts-node-dev --respawn src/index.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "keywords": [],
+  "author": "Akira Shinohara",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.7.11",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.8",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.4.1",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "typescript": "^3.6.3"
+  }
+}
